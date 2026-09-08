@@ -1,0 +1,186 @@
+{
+ "date": "2026-09-08T15:42:19.226388+00:00",
+ "gen_model": "qwen/qwen3.8-27b",
+ "judge_model": "openai/gpt-oss-120b",
+ "judge_prompt": "Which answer is better? Reply with only one character: 1 or 2.",
+ "records": [
+  {
+   "question": "What causes the seasons on Earth?",
+   "a": "The seasons are primarily caused by the Earth's 23.5-degree axial tilt as it orbits the Sun. This tilt means that different hemispheres receive varying amounts of direct sunlight throughout the year, leading to warmer and cooler periods.",
+   "b": "Although the distance between Earth and the Sun changes slightly during the orbit, it is not the main driver of seasons. Instead, the consistent tilt of the Earth's axis causes one hemisphere to face the Sun more directly at different times of the year, creating seasonal temperature variations.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "How should a beginner start learning to cook?",
+   "a": "Start by mastering a few simple techniques like sautéing, boiling, and roasting using basic recipes that require minimal ingredients. Focus on understanding how heat affects food and practice consistently to build confidence before moving on to more complex dishes.",
+   "b": "Begin by choosing one cuisine you enjoy and learning its foundational dishes from a reliable cookbook or video series. This approach helps you understand specific flavor profiles and techniques within a structured context, making the learning process more manageable and engaging.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "Why is the sky blue?",
+   "a": "The sky appears blue because sunlight scatters as it passes through the atmosphere, with shorter blue wavelengths scattering much more effectively than longer red or yellow wavelengths. This phenomenon, known as Rayleigh scattering, causes blue light to be dispersed in all directions, making the sky look blue to our eyes.",
+   "b": "Sunlight contains all colors of the spectrum, but when it hits gas molecules in the Earth's atmosphere, blue light is scattered more than other colors due to its shorter wavelength. This widespread scattering of blue light fills the sky, which is why we perceive it as blue rather than other colors.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "What's a good way to stay focused while working from home?",
+   "a": "Establish a dedicated workspace separate from your living areas to create a mental boundary between work and home life. Additionally, use time-management techniques like the Pomodoro method to break tasks into manageable chunks with regular breaks.",
+   "b": "Create a strict daily routine with set start and end times to maintain structure and prevent work from bleeding into personal time. It is also helpful to limit digital distractions by using website blockers or enabling \"Do Not Disturb\" modes during focused work blocks.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "Explain what a hash function is.",
+   "a": "A hash function is an algorithm that takes an input, or 'message', and returns a fixed-size string of characters known as a hash value or digest. This value is uniquely determined by the data, meaning any change to the input, even a single character, will result in a completely different hash.",
+   "b": "Think of a hash function as a digital fingerprint generator that converts variable-length data into a fixed-length string of code. It maps large datasets to smaller, unique identifiers, allowing for efficient data indexing and verification of integrity.",
+   "verdict_ab": "2",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "What are the benefits of regular exercise?",
+   "a": "Regular exercise significantly improves cardiovascular health and strengthens muscles, while also boosting mental well-being by reducing stress and anxiety. It helps maintain a healthy weight and improves sleep quality, leading to higher overall energy levels throughout the day.",
+   "b": "Engaging in consistent physical activity enhances longevity by lowering the risk of chronic diseases like type 2 diabetes and heart disease. Beyond physical health, exercise stimulates the release of endorphins, which improves mood and cognitive function, fostering better mental clarity and emotional resilience.",
+   "verdict_ab": "2",
+   "verdict_ba": "1",
+   "skip": null
+  },
+  {
+   "question": "How does a vaccine work?",
+   "a": "Vaccines introduce a harmless piece of a pathogen, such as a weakened virus or protein, to train the immune system. This exposure prompts the body to produce antibodies and memory cells without causing the actual disease, providing long-term protection against future infections.",
+   "b": "By simulating a mild infection, vaccines teach the immune system how to recognize and fight specific pathogens. This process creates immunological memory, allowing the body to respond rapidly and effectively if it encounters the real disease later on.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "What makes a good cup of coffee?",
+   "a": "A good cup of coffee relies on fresh, high-quality beans that have been properly roasted and ground to match your brewing method. Precise control over water temperature and the extraction time is also crucial to balance acidity and bitterness for a smooth flavor.",
+   "b": "Freshly roasted beans and clean, filtered water are the foundational elements that define a superior cup of coffee. The specific grind size and brewing technique must then be carefully calibrated to extract the optimal balance of sweetness and complexity without over-extraction.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "Why do leaves change color in autumn?",
+   "a": "As days shorten and temperatures drop, trees stop producing the green chlorophyll that masks other pigments. This reveals hidden yellow and orange carotenoids, while new red anthocyanins form in some species, creating the vibrant autumn palette before the leaves fall.",
+   "b": "The process is triggered by reduced sunlight and cooler weather, which cause trees to break down chlorophyll to conserve energy for winter. Once the green fades, underlying yellow and orange pigments become visible, and in some trees, sugar buildup creates bright red hues before the leaf detaches.",
+   "verdict_ab": "1",
+   "verdict_ba": "1",
+   "skip": null
+  },
+  {
+   "question": "How can someone improve their writing?",
+   "a": "The most effective way to improve writing is to read widely and critically, analyzing how skilled authors structure sentences and build arguments. By studying different styles and genres, you can absorb new techniques and vocabulary that you can then apply to your own work.",
+   "b": "Consistent practice is essential, so start by writing every day and seeking constructive feedback from trusted peers or mentors. Revising your drafts with a focus on clarity and concision will help you identify your personal patterns of error and refine your voice over time.",
+   "verdict_ab": "2",
+   "verdict_ba": "1",
+   "skip": null
+  },
+  {
+   "question": "What is compound interest?",
+   "a": "Compound interest is the process where you earn interest on both your initial deposit and the accumulated interest from previous periods. This causes your money to grow at an increasing rate over time, often described as \"interest on interest.\"",
+   "b": "It is a financial concept where earnings from an investment are added to the principal, allowing future returns to be generated on a larger base amount. Unlike simple interest, this method accelerates growth because the base amount for calculating interest increases with each compounding period.",
+   "verdict_ab": "2",
+   "verdict_ba": "1",
+   "skip": null
+  },
+  {
+   "question": "How do noise-cancelling headphones work?",
+   "a": "Noise-cancelling headphones use microphones to detect ambient sound waves and generate an \"inverted\" or anti-phase signal that cancels out the original noise through destructive interference. This process effectively reduces low-frequency background sounds like engine hum or air conditioning before the audio reaches your ears.",
+   "b": "These headphones employ active noise control by creating a sound wave that is the exact opposite of the surrounding environment's noise. When this anti-noise meets the external sound waves, they interfere with each other and neutralize, resulting in a quieter listening experience for the user.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "What's the best way to remember someone's name?",
+   "a": "The most effective technique is to repeat the name immediately when introduced and use it again during the conversation to reinforce the memory. You can also link the name to a visual image or associate it with someone else who shares the same name to create a stronger mental anchor.",
+   "b": "Focus your full attention on the person and ask them to spell the name if it is unfamiliar, as this engages multiple senses in the learning process. Later, silently review the names of people you met that day to consolidate the information into long-term memory before it fades.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "Why do we dream?",
+   "a": "One prevailing theory suggests that dreaming is a mechanism for memory consolidation, where the brain processes and organizes experiences from the day to strengthen long-term recall. Additionally, it may serve as a form of emotional regulation, allowing us to rehearse threats or process difficult feelings in a safe, offline environment.",
+   "b": "Another perspective posits that dreams are a byproduct of the brain's random neural firing during REM sleep, which the conscious mind tries to interpret into a coherent narrative. This \"activation-synthesis\" model implies that while dreams may not have a specific biological purpose, they help maintain brain health and readiness for waking life.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "How should you respond to a job rejection?",
+   "a": "Respond professionally by thanking the interviewer for their time and consideration, which leaves a positive final impression. If appropriate, you might also ask for brief feedback to help you improve for future opportunities.",
+   "b": "Acknowledge the decision with grace and maintain a polite, concise email that expresses continued interest in the company. This keeps the door open for potential future openings and demonstrates your resilience in the face of setbacks.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "What is the greenhouse effect?",
+   "a": "The greenhouse effect is a natural process where gases in Earth's atmosphere trap heat from the sun, keeping the planet warm enough to support life. Without it, Earth would be too cold for most organisms to survive, though human activities are intensifying this effect by adding more heat-trapping gases.",
+   "b": "It is the mechanism by which certain atmospheric gases, such as carbon dioxide and methane, absorb and re-radiate infrared radiation from the Earth's surface. This process prevents heat from escaping into space, effectively acting as an insulating blanket that maintains the planet's average temperature.",
+   "verdict_ab": "2",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "How do you make a decision when you're stuck?",
+   "a": "Try the \"coin flip\" technique not to let chance decide, but to observe your immediate emotional reaction to the result; if you feel disappointed when the coin lands on heads, you likely already prefer tails. This simple trick bypasses overthinking and reveals your true inclination.",
+   "b": "Set a strict time limit for your deliberation to prevent analysis paralysis, then force yourself to commit to a choice before the timer runs out. Accepting that no decision is perfect allows you to move forward and learn from the outcome rather than getting stuck in endless hypotheticals.",
+   "verdict_ab": "2",
+   "verdict_ba": "1",
+   "skip": null
+  },
+  {
+   "question": "What causes jet lag?",
+   "a": "Jet lag occurs when rapid travel across multiple time zones disrupts your body's internal circadian rhythm. This mismatch between your biological clock and the new local time leads to symptoms like fatigue, insomnia, and difficulty concentrating until your body adjusts.",
+   "b": "The primary cause of jet lag is the desynchronization between your internal biological clock and the external light-dark cycle of your new location. When you travel quickly across time zones, your body struggles to reset its sleep-wake patterns, resulting in temporary sleep disturbances and reduced alertness.",
+   "verdict_ab": "1",
+   "verdict_ba": "1",
+   "skip": null
+  },
+  {
+   "question": "How does a search engine rank pages?",
+   "a": "Search engines use complex algorithms to evaluate relevance by analyzing factors like keyword matching, content quality, and user engagement metrics. They also assess the authority of a page through its backlink profile, ensuring that trusted and popular sites appear higher in the results.",
+   "b": "Ranking is primarily determined by an algorithm that considers both on-page relevance, such as how well content matches the query, and off-page signals, like the number and quality of external links pointing to the site. This combination helps ensure that the most useful and authoritative information is presented at the top of the search results.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  },
+  {
+   "question": "What's a healthy way to handle stress?",
+   "a": "Engaging in regular physical activity, such as a daily walk or yoga session, can help release tension and boost your mood. Additionally, practicing deep breathing exercises or meditation provides a quick, effective way to calm your nervous system when feeling overwhelmed.",
+   "b": "Prioritizing adequate sleep and maintaining a balanced diet are fundamental for building long-term resilience against stress. It is also beneficial to set clear boundaries and learn to say no to commitments that exceed your capacity, ensuring you have time for rest and recovery.",
+   "verdict_ab": "1",
+   "verdict_ba": "2",
+   "skip": null
+  }
+ ],
+ "analysis": {
+  "attempted": 20,
+  "valid": 20,
+  "skipped": 0,
+  "flips": 4,
+  "flip_rate": 0.2,
+  "flip_rate_ci95": [
+   0.0807,
+   0.416
+  ],
+  "second_slot_picks": 20,
+  "judgments": 40,
+  "second_slot_rate": 0.5,
+  "second_slot_ci95": [
+   0.352,
+   0.648
+  ]
+ }
+}
