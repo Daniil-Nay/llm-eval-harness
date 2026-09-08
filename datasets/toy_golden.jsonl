@@ -1,0 +1,40 @@
+{"query": "Does every worker share one cache or does each process keep its own?", "relevant_ids": ["overview"], "type": "fact"}
+{"query": "Which Python versions does the library run on?", "relevant_ids": ["installation"], "type": "fact"}
+{"query": "What does get return when the key is absent?", "relevant_ids": ["quickstart"], "type": "fact"}
+{"query": "Which eviction policy is used when none is chosen?", "relevant_ids": ["eviction"], "type": "fact"}
+{"query": "Is expired data removed by a background thread?", "relevant_ids": ["ttl"], "type": "fact"}
+{"query": "Why is the pickle backend risky for data from users?", "relevant_ids": ["serialization"], "type": "fact"}
+{"query": "Do capacity bounds apply per shard or for the whole cache?", "relevant_ids": ["sharding"], "type": "fact"}
+{"query": "What fields does stats() report?", "relevant_ids": ["metrics"], "type": "fact"}
+{"query": "Can two event loops share a single cache object?", "relevant_ids": ["async-api"], "type": "fact"}
+{"query": "Are entries that expired in the meantime loaded back from a snapshot?", "relevant_ids": ["persistence"], "type": "fact"}
+{"query": "What happens when max items is set to zero?", "relevant_ids": ["configuration"], "type": "fact"}
+{"query": "Which config source wins when both a constructor argument and an env var are set?", "relevant_ids": ["configuration"], "type": "fact"}
+{"query": "How many runtime dependencies does the package pull in?", "relevant_ids": ["installation"], "type": "fact"}
+{"query": "What does a hit rate below one half typically indicate?", "relevant_ids": ["metrics"], "type": "fact"}
+{"query": "How do I install the development extras?", "relevant_ids": ["installation"], "type": "procedure"}
+{"query": "How do I memoize a regular function?", "relevant_ids": ["quickstart"], "type": "procedure"}
+{"query": "How do I pick LFU instead of the default policy?", "relevant_ids": ["eviction"], "type": "procedure"}
+{"query": "How do I set an expiry of five minutes on a value?", "relevant_ids": ["ttl"], "type": "procedure"}
+{"query": "How do I force removal of all expired entries right now?", "relevant_ids": ["ttl"], "type": "procedure"}
+{"query": "How do I switch storage to JSON copies?", "relevant_ids": ["serialization"], "type": "procedure"}
+{"query": "How do I spread lock contention across threads?", "relevant_ids": ["sharding"], "type": "procedure"}
+{"query": "How do I forward eviction events to my monitoring?", "relevant_ids": ["metrics"], "type": "procedure"}
+{"query": "How do I memoize a coroutine?", "relevant_ids": ["async-api"], "type": "procedure"}
+{"query": "How do I make a redeployed service start with a warm cache?", "relevant_ids": ["persistence"], "type": "procedure"}
+{"query": "How do I write current entries to a file on disk?", "relevant_ids": ["persistence"], "type": "procedure"}
+{"query": "How do I bound the number of stored items via environment?", "relevant_ids": ["configuration"], "type": "procedure"}
+{"query": "When is a shared store like Redis the better choice?", "relevant_ids": ["comparison"], "type": "comparison"}
+{"query": "LFU or LRU for a heavily skewed access pattern?", "relevant_ids": ["eviction"], "type": "comparison"}
+{"query": "Live objects or JSON copies - which protects against mutation?", "relevant_ids": ["serialization"], "type": "comparison"}
+{"query": "Is adding a cache in front of a fast indexed query worth it?", "relevant_ids": ["comparison"], "type": "comparison"}
+{"query": "Single big cache versus many shards - what is the trade-off?", "relevant_ids": ["sharding"], "type": "comparison"}
+{"query": "Memory of my service keeps climbing even though I set TTLs - why?", "relevant_ids": ["troubleshooting", "ttl"], "type": "troubleshooting"}
+{"query": "After a deploy the hit rate is terrible for several minutes", "relevant_ids": ["troubleshooting", "persistence"], "type": "troubleshooting"}
+{"query": "I get KeyError from the memoize decorator", "relevant_ids": ["troubleshooting"], "type": "troubleshooting"}
+{"query": "Cached values change after I mutate the original object", "relevant_ids": ["troubleshooting", "serialization"], "type": "troubleshooting"}
+{"query": "Concurrent coroutines all recompute the same expensive key", "relevant_ids": ["async-api"], "type": "troubleshooting"}
+{"query": "A hot shard keeps evicting while others stay half empty", "relevant_ids": ["sharding"], "type": "troubleshooting"}
+{"query": "Why does my cache never free memory for keys nobody touches?", "relevant_ids": ["ttl"], "type": "troubleshooting"}
+{"query": "Snapshot pauses my service - what should I do about it?", "relevant_ids": ["persistence"], "type": "troubleshooting"}
+{"query": "What tells me whether my working set fits the configured bound?", "relevant_ids": ["metrics"], "type": "troubleshooting"}

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evalkit"
+version = "0.1.0"
+description = "Small, dependency-light toolkit for evaluating LLM/RAG systems: metrics, golden-set hygiene, judge-bias measurement, CI gate"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Daniil Nay" }]
+dependencies = ["requests>=2.28"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+include = ["evalkit*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# golden-set rows read better one per line, however long
+"tools/make_toy_dataset.py" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

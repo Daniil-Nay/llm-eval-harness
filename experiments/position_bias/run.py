@@ -43,7 +43,7 @@ JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "openai/gpt-oss-120b")
 def call(messages, model, max_tokens, temperature=0.0, retries=6):
     base = os.environ["LLM_BASE_URL"].rstrip("/")
     key = os.environ["LLM_API_KEY"]
-    for attempt in range(retries):
+    for _attempt in range(retries):
         r = requests.post(base + "/chat/completions",
                           headers={"Authorization": "Bearer " + key},
                           json={"model": model, "messages": messages,
@@ -134,7 +134,8 @@ def report(payload):
         return
     print(f"winner FLIPPED on swap : {a['flips']}/{a['valid']} = {a['flip_rate']:.0%}"
           f"   (95% CI {a['flip_rate_ci95'][0]:.0%}-{a['flip_rate_ci95'][1]:.0%})")
-    print(f"picked the SECOND slot : {a['second_slot_picks']}/{a['judgments']} = {a['second_slot_rate']:.0%}"
+    print(f"picked the SECOND slot : {a['second_slot_picks']}/{a['judgments']}"
+          f" = {a['second_slot_rate']:.0%}"
           f"   (95% CI {a['second_slot_ci95'][0]:.0%}-{a['second_slot_ci95'][1]:.0%})")
     print("\nCaveat: small sample, single judge model. Illustrative, not a benchmark.")
     print("Not run: verbosity bias, self-preference (needs padded-pair and cross-family setups).")
