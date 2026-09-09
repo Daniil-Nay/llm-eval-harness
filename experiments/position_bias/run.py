@@ -102,12 +102,20 @@ def analyze(records):
     attempted = len(records)
     valid = [r for r in records if r["verdict_ab"] and r["verdict_ba"]]
     skipped = attempted - len(valid)
+    # map both orders back to the underlying answer so a "tie" verdict is
+    # handled the same way evalkit.judge.bias does (tie/tie = consistent)
+    map_ab = {"1": "first", "2": "second", "tie": "tie"}
+    map_ba = {"1": "second", "2": "first", "tie": "tie"}
     flips = sum(1 for r in valid
-                if (r["verdict_ab"] == "1") != (r["verdict_ba"] == "2"))
-    # slot preference: count over all valid judgments which SLOT was picked
-    second_slot = sum((1 for r in valid for v, sec in
-                       ((r["verdict_ab"], "2"), (r["verdict_ba"], "2")) if v == sec))
-    judgments = 2 * len(valid)
+                if map_ab[r["verdict_ab"]] != map_ba[r["verdict_ba"]])
+    # slot preference: every parsed non-tie verdict counts, including the
+    # surviving half of a partially skipped pair (same rule as evalkit)
+    second_slot = judgments = 0
+    for r in records:
+        for v in (r["verdict_ab"], r["verdict_ba"]):
+            if v in ("1", "2"):
+                judgments += 1
+                second_slot += v == "2"
     n = len(valid)
     flip_lo, flip_hi = wilson(flips, n)
     s_lo, s_hi = wilson(second_slot, judgments)
