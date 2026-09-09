@@ -81,7 +81,7 @@ only to produce your own numbers instead of replaying the committed ones.
 
 ```bash
 pip install -e .[dev]
-pytest -q                  # 48 offline tests, no API key needed
+pytest -q                  # 62 offline tests, no API key needed
 python -m evalkit.gate     # hygiene + recall@5 gate on the toy dataset
 ```
 
