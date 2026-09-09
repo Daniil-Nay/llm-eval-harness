@@ -1,10 +1,10 @@
 """Regression gate: evaluate a SUT on a golden set and fail loudly below threshold.
 
-Exit code is the interface - wire `python -m evalkit.gate` into CI and a
+The exit code is the interface. Wire `python -m evalkit.gate` into CI and a
 retrieval regression turns a PR red instead of a dashboard slightly less green.
 
-The threshold compares against the LOWER bootstrap bound, not the point
-estimate: a gate that flaps on sampling noise gets ignored within a month,
+The threshold compares against the LOWER bootstrap bound rather than the point
+estimate. A gate that flaps on sampling noise gets ignored within a month,
 which is worse than no gate.
 """
 

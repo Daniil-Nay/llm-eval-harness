@@ -2,9 +2,9 @@
 
 A judge is another model with its own failure modes, so every protocol here
 returns raw records (persistable, replayable) instead of a bare score, and a
-verdict that fails to parse is counted, never silently dropped from the
-denominator. Records keep the judge's raw reply text: analytics can be
-recomputed offline, and parse failures can be inspected instead of imagined.
+verdict that fails to parse is reported as a counted skip. Records keep the
+judge's raw reply text, so analytics can be recomputed offline and parse
+failures can be inspected directly.
 """
 
 import re
@@ -64,9 +64,9 @@ def pairwise_with_swap(client, question: str, answer_a: str, answer_b: str,
                        max_tokens: int = 600) -> dict:
     """Judge the pair in both orders and return a raw record.
 
-    The swap is not optional decoration: without it a position-biased judge
-    produces confident, stable, wrong rankings. `agrees` is True only when the
-    two orderings name the same underlying answer.
+    Without the swap, a position-biased judge produces rankings that look
+    stable and are wrong. `agrees` is True only when the two orderings name
+    the same underlying answer.
     """
     raw_ab = client.chat(
         [{"role": "user", "content": PAIRWISE_PROMPT.format(
@@ -120,7 +120,7 @@ def rubric_based(client, question: str, answer: str, criteria: list[str],
 
     Rubrics narrow what "better" means: instead of one opaque preference the
     judge answers several small questions a human can audit one by one.
-    `skip` is set when any criterion went unanswered - partial verdicts are
+    `skip` is set when any criterion went unanswered. Partial verdicts are
     kept, but the record is flagged.
     """
     raw = client.chat(

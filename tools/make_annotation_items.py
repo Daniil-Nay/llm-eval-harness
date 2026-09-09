@@ -3,7 +3,7 @@
 Each of the 20 question/answer pairs yields two items (the A and the B
 answer), so one annotator grades 40 answers on the 0-3 scale defined in
 datasets/annotations/RUBRIC.md. The companion file annotator_b.jsonl is
-hand-authored by the repo author against that rubric - this script never
+hand-authored by the repo author against that rubric; this script never
 touches it.
 """
 

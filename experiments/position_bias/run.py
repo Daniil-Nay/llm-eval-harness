@@ -8,16 +8,16 @@ position bias.
 Improvements over the original 2026-06-09 run:
   * generator and judge come from DIFFERENT model families, so the
     self-preference confound (a model judging its own text) is removed;
-  * every verdict is persisted to results/<date>.json - the headline numbers
-    are recomputed from raw records, never typed by hand;
+  * every verdict is persisted to results/<date>.json, so the headline numbers
+    are recomputed from raw records instead of typed by hand;
   * --replay <file> recomputes all analytics offline, no API key needed;
-  * skipped pairs are counted, not silently dropped from the denominator;
+  * skipped pairs are reported alongside the valid ones;
   * proportions come with Wilson 95% confidence intervals.
 
 Env (OpenAI-compatible endpoints):
-  LLM_BASE_URL, LLM_API_KEY  - required for a live run
-  GEN_MODEL   (default qwen/qwen3.8-27b)   - writes the answer pairs
-  JUDGE_MODEL (default openai/gpt-oss-120b) - judges them
+  LLM_BASE_URL, LLM_API_KEY                 required for a live run
+  GEN_MODEL   (default qwen/qwen3.8-27b)    writes the answer pairs
+  JUDGE_MODEL (default openai/gpt-oss-120b) judges them
 """
 
 import argparse

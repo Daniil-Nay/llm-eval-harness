@@ -31,7 +31,7 @@ def weighted_kappa(labels_a: list[int], labels_b: list[int],
                    n_categories: int, weights: str = "linear") -> float:
     """Weighted kappa for ordinal labels 0..n_categories-1.
 
-    Disagreeing by one grade should cost less than disagreeing by four -
+    Disagreeing by one grade should cost less than disagreeing by four;
     plain kappa treats both as equally wrong. `weights` is "linear" or
     "quadratic" (quadratic punishes large disagreements harder).
     """

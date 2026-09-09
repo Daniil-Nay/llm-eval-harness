@@ -2,7 +2,7 @@
 
 A golden set rots quietly: duplicates from logs, near-duplicates from
 synthetic generation, test questions leaking into the indexed corpus, one
-query type crowding out the rest. None of it crashes anything - it just bends
+query type crowding out the rest. None of it crashes anything; it just bends
 every number you compute afterwards. `validate` makes the rot visible.
 """
 
@@ -49,8 +49,8 @@ def find_exact_duplicates(rows: list[dict]) -> list[list[int]]:
 
 def find_near_duplicates(rows: list[dict], threshold: float = 0.8) -> list[tuple[int, int, float]]:
     """Pairs of row indices whose queries share most of their 4-word shingles
-    (Jaccard >= threshold). O(n^2) - fine for golden-set sizes; switch to
-    MinHash when you outgrow a few thousand rows."""
+    (Jaccard >= threshold). O(n^2), which is fine for golden-set sizes; switch
+    to MinHash when you outgrow a few thousand rows."""
     shingle_sets = [_shingles(r["query"]) for r in rows]
     pairs = []
     for i in range(len(rows)):
@@ -88,8 +88,8 @@ def find_leakage(rows: list[dict], corpus: dict[str, str],
 
 def type_skew(rows: list[dict], key: str = "type") -> dict:
     """Distribution of query types plus the share of the dominant one.
-    Rows without the tag are counted under "(untagged)" - untagged rows are
-    how skew hides."""
+    Rows without the tag are counted under "(untagged)", since skew often hides
+    in the untagged part."""
     counts = Counter(row.get(key, "(untagged)") for row in rows)
     top = counts.most_common(1)[0]
     return {

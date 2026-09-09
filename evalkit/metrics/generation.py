@@ -32,9 +32,9 @@ def citation_precision(quotes: list[str], sources: dict[str, str],
                        cited_ids: list[str]) -> float:
     """Share of (quote, cited doc) pairs where the quote is really in that doc.
 
-    `quotes[i]` is claimed to come from `sources[cited_ids[i]]`. Unknown doc id
-    counts as an unsupported citation - pointing at a document that does not
-    exist is the worst kind of confident.
+    `quotes[i]` is claimed to come from `sources[cited_ids[i]]`. An unknown doc
+    id counts as an unsupported citation, since a pointer to a document that
+    does not exist supports nothing.
     """
     if len(quotes) != len(cited_ids):
         raise ValueError("quotes and cited_ids differ in length")

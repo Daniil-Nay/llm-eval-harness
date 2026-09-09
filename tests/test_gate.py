@@ -14,7 +14,7 @@ def test_baseline_prefers_selective_tokens():
         "install": "install pip python cache bound",
     }
     sut = KeywordBaseline(corpus)
-    # "cache bound" appears in both docs, "eviction" only in one - it must win
+    # "cache bound" appears in both docs, "eviction" only in one, so it wins
     assert sut.retrieve("eviction cache bound", k=1) == ["eviction"]
 
 

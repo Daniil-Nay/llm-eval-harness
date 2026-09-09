@@ -1,10 +1,10 @@
 """Generate the shipped baseline/candidate run pair.
 
 Baseline is the default idf-weighted KeywordBaseline; candidate is the same
-retriever with weighting turned off - a real, deterministic regression, not a
-staged one. Both runs share the same golden and corpus, so `diff_runs` accepts
-them; k=1 because that is where the toy dataset actually has headroom
-(recall@5 sits at 0.96 and nothing interesting can regress).
+retriever with weighting turned off, so the regression is real and
+deterministic instead of staged. Both runs share the same golden and corpus,
+so `diff_runs` accepts them; k=1 because that is where the toy dataset has
+headroom (recall@5 sits at 0.96 and nothing interesting can regress).
 """
 
 import json

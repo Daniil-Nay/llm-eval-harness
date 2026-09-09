@@ -1,9 +1,10 @@
 """Generate the toy corpus and golden set.
 
-The corpus documents a fictional in-process caching library ("orbitcache") -
-fictional on purpose: the dataset is a test fixture with known-good structure,
-not knowledge anyone should learn from. Queries are phrased in different words
-than the docs so the leakage detector stays quiet on the clean set.
+The corpus documents a fictional in-process caching library ("orbitcache").
+It is fictional on purpose: the dataset is a test fixture with known-good
+structure, and nobody should learn the domain from it. Queries are phrased in
+different words than the docs so the leakage detector stays quiet on the clean
+set.
 """
 
 import json

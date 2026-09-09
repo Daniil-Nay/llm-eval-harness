@@ -1,8 +1,8 @@
 """Fail if any tracked source or doc file contains Cyrillic.
 
-This repository is English-only by policy. The check is mechanical because
-"we'll keep it English" as a habit did not survive contact with reality on a
-previous project - a regex does.
+This repository is English-only by policy. The check is mechanical because on a
+previous project "we'll keep it English" as a habit did not survive contact
+with reality; a regex does.
 """
 
 import re

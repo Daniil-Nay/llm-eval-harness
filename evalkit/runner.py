@@ -2,9 +2,9 @@
 
 A saved run is a first-class artifact: per-example scores plus a manifest
 that pins what was measured (golden hash, corpus hash, SUT name, k). Two runs
-are only comparable when their manifests agree - diffing runs of different
-golden sets produces a number that means nothing, and `diff_runs` refuses to
-do it instead of quietly complying.
+are only comparable when their manifests agree. Diffing runs of different
+golden sets produces a number that means nothing, so `diff_runs` refuses
+instead of quietly complying.
 """
 
 import datetime as dt
@@ -66,7 +66,7 @@ def load_run(path: str | Path) -> dict:
 
 def manifests_comparable(a: dict, b: dict) -> tuple[bool, str | None]:
     """Runs compare only when they measured the same thing the same way.
-    The date and the SUT name MAY differ - that is what a diff is for."""
+    The date and the SUT name MAY differ, since that is what a diff is for."""
     for field in ("golden_sha", "corpus_sha", "k"):
         if a["manifest"][field] != b["manifest"][field]:
             return False, field

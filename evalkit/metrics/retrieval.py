@@ -2,8 +2,8 @@
 
 All functions take `retrieved` (ranked, best first) and `relevant` (set-like of
 gold ids) and return a float in [0, 1]. Per-query values are meant to be
-aggregated by the caller together with a confidence interval (see stats.py) -
-a bare mean hides more than it shows.
+aggregated by the caller together with a confidence interval (see stats.py),
+because a bare mean hides the spread.
 """
 
 import math
@@ -21,7 +21,7 @@ def recall_at_k(retrieved: list[str], relevant: set[str], k: int) -> float:
 
 def precision_at_k(retrieved: list[str], relevant: set[str], k: int) -> float:
     """Share of the top-k that is relevant. Divides by k even when fewer results
-    came back: an empty slot is a miss, not a free pass."""
+    came back, so an empty slot counts as a miss."""
     if k <= 0:
         raise ValueError("k must be positive")
     top = retrieved[:k]

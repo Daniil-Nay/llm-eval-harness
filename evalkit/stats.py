@@ -1,8 +1,8 @@
 """Statistics for people who ship metrics.
 
 The recurring question this module answers: you measured 0.71 yesterday and
-0.74 today - is that an improvement or noise? On fifty examples it is usually
-noise, and the paired bootstrap below is the cheapest honest way to know.
+0.74 today. Is that an improvement or noise? On fifty examples it is usually
+noise, and the paired bootstrap below is the cheapest honest way to tell.
 """
 
 import math
@@ -11,7 +11,7 @@ import random
 
 def wilson_interval(successes: int, trials: int, z: float = 1.96) -> tuple[float, float]:
     """Wilson score interval for a proportion. Behaves sanely near 0 and 1,
-    which is exactly where the naive +-1.96*SE interval falls apart."""
+    which is where the naive +-1.96*SE interval falls apart."""
     if trials <= 0:
         return (0.0, 1.0)
     if not 0 <= successes <= trials:

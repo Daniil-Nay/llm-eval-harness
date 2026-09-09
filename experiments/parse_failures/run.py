@@ -1,11 +1,10 @@
-"""Parse failures are real: starve the judge and keep the evidence.
+"""Starve the judge's token budget and keep the evidence.
 
 The same pointwise judge rates the same 20 answers twice: once with a normal
 token budget and once with max_tokens=4. Reasoning models spend the budget on
 hidden thinking first, so the starved condition returns empty or truncated
-text and the verdict never arrives. Every raw reply is persisted - the point
-of this dataset is that a "skip" is a real, inspectable string, not an
-abstraction.
+text and the verdict never arrives. Every raw reply is persisted, so a "skip"
+in this dataset is a string you can open and read.
 
 Env: LLM_BASE_URL, LLM_API_KEY, JUDGE_MODEL (same contract as evalkit).
 Replay: --replay <file> recomputes the analysis offline.

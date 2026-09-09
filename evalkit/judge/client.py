@@ -9,8 +9,9 @@ provider (or a local model) without edits:
 
 Two lessons are baked in, both learned the expensive way:
   * reasoning models spend max_tokens on hidden thinking from the same
-    budget - a tiny cap returns an empty verdict, so the default is generous;
-  * free tiers rate-limit tokens per minute - a 429 is a pause, not a failure.
+    budget, so a tiny cap returns an empty verdict and the default is generous;
+  * free tiers rate-limit tokens per minute, so a 429 waits and retries
+    instead of raising.
 """
 
 import os

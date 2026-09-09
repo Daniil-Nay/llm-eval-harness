@@ -1,8 +1,9 @@
 # llm-eval-harness
 
 A small toolkit for evaluating LLM/RAG systems, plus a reproducible experiment
-on position bias in LLM-as-judge setups. Stdlib + `requests` only; everything
-deterministic runs offline; every proportion ships with a confidence interval.
+on position bias in LLM-as-judge setups. Stdlib + `requests` only. Everything
+deterministic runs offline, and every proportion ships with a confidence
+interval.
 
 ## The finding
 
@@ -14,25 +15,25 @@ different model families on purpose):
 
 | measurement | result | 95% CI |
 |---|---|---|
-| verdict flipped when order swapped | 4/20 = **20%** | 8–42% |
-| second slot picked, across all 40 judgments | 20/40 = **50%** | 35–65% |
+| verdict flipped when order swapped | 4/20 = **20%** | 8-42% |
+| second slot picked, across all 40 judgments | 20/40 = **50%** | 35-65% |
 
 An earlier prototype of this experiment (June 2026) reported 35% flips and a
 68% preference for the second slot. Those numbers came from a sloppier setup:
 the same model family generated and judged the answers, unparseable verdicts
 were dropped from the denominator, and the results file was typed by hand.
-Fixing the setup — cross-family judge, persisted raw verdicts, counted skips —
-shrank the flip rate and made the slot preference disappear entirely.
+The fixed setup uses a cross-family judge, persists every raw verdict, and
+counts skips. That shrank the flip rate and made the slot preference
+disappear.
 
-That is the actual lesson of this repo. The measurement infrastructure changed
-the conclusion more than any prompt tweak ever did. And at n=20 the flip-rate
-interval spans 8–42%, which is why the harness refuses to print a proportion
-without one.
+The lesson of this repo is that the measurement setup moved the conclusion
+more than any prompt tweak did. And at n=20 the flip-rate interval spans
+8-42%, which is why the harness refuses to print a proportion without one.
 
 Raw per-pair verdicts live in
 [`experiments/position_bias/results/`](experiments/position_bias/results/), and
 the headline numbers are recomputed from them by the test suite
-(`tests/test_judge.py`) and by `run.py --replay` — nothing is typed by hand
+(`tests/test_judge.py`) and by `run.py --replay`. Nothing is typed by hand
 anymore.
 
 ```bash
@@ -52,7 +53,7 @@ evalkit/
   runner.py              run a SUT over a golden set: per-example scores,
                          pinned manifest, diff of two runs
   judge/client.py        OpenAI-compatible chat client (env-configured)
-  judge/cache.py         disk cache for judge calls - a rerun costs nothing
+  judge/cache.py         disk cache for judge calls, so a rerun costs nothing
   judge/protocols.py     pairwise-with-swap, pointwise, rubric-based;
                          parse-failure = counted skip, raw reply persisted
   judge/bias.py          flip rate + slot preference over persisted records
@@ -60,7 +61,7 @@ evalkit/
   gate.py                CI regression gate, exit code as the interface
 datasets/                toy corpus (13 docs) + golden set (40 queries)
 datasets/annotations/    40 answers graded 0-3 by the author against a
-                         written rubric - a fixed second annotator
+                         written rubric, used as a second annotator
 runs/                    baseline vs degraded-variant retrieval runs, diffable
 experiments/position_bias/   the experiment above, with raw results
 experiments/parse_failures/  the same judge with a starved token budget:
@@ -68,7 +69,7 @@ experiments/parse_failures/  the same judge with a starved token budget:
 ```
 
 The toy corpus documents a fictional caching library, so retrieval quality here
-measures the harness, never the model's memorized knowledge.
+measures the harness rather than the model's memorized knowledge.
 
 ## Working offline
 
@@ -92,7 +93,7 @@ python -m evalkit.gate --threshold 0.6   # exit 0 if lower CI bound >= 0.6
 ```
 
 Wire that into CI and a retrieval regression turns the PR red. This repo runs
-it on itself — see [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+it on itself in [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
 
 ## Evaluating your own system
 
@@ -110,9 +111,9 @@ scores = [recall_at_k(my_system.retrieve(r["query"], 5), set(r["relevant_ids"]),
 print(sum(scores) / len(scores), bootstrap_ci(scores))
 ```
 
-Run `validate(rows, corpus)` first. A golden set rots quietly — duplicates from
+Run `validate(rows, corpus)` first. A golden set rots quietly: duplicates from
 logs, synthetic questions leaking into the indexed corpus, one query type
-crowding out the rest — and none of it crashes anything; it just bends every
+crowding out the rest. None of that crashes anything; it just bends every
 number computed afterwards.
 
 ## Measuring your own judge
@@ -144,8 +145,8 @@ otherwise self-preference and position bias are measured as one lump.
 - One judge model, n=20 pairs. The intervals above say how little that proves.
 - Verbosity bias and self-preference are not measured here (they need
   padded-pair and cross-family setups the experiment doesn't include yet).
-- The keyword baseline is a floor for pipeline testing, never a retrieval
-  recommendation.
+- The keyword baseline exists so the pipeline runs offline in CI. Do not read
+  it as a retrieval recommendation.
 
 ## License
 

@@ -1,8 +1,8 @@
 """System-under-test protocol and a keyword baseline.
 
 Anything that can retrieve documents for a query can be evaluated by this
-harness - a real RAG service over HTTP, or the toy baseline below. The
-baseline is deliberately naive (token overlap scoring): it exists so the whole
+harness: a real RAG service over HTTP, or the toy baseline below. The
+baseline is deliberately naive (token overlap scoring). It exists so the whole
 pipeline runs offline in CI, and so there is something honest to beat.
 """
 
@@ -21,8 +21,8 @@ class KeywordBaseline:
     """Scores documents by weighted token overlap with the query.
 
     Rare tokens weigh more (a crude idf): overlap on "the" proves nothing,
-    overlap on "eviction" does. No stemming, no embeddings - this is the floor,
-    not a recommendation.
+    overlap on "eviction" does. No stemming, no embeddings. It is the floor to
+    beat rather than a retrieval recommendation.
 
     `weighting="uniform"` turns the idf weighting off (every shared token
     counts as 1.0). It exists as a legitimately worse variant: the shipped

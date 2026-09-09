@@ -1,6 +1,6 @@
 """Disk cache for judge calls.
 
-An eval run repeats itself constantly - reruns after a code tweak, replays,
+An eval run repeats itself constantly: reruns after a code tweak, replays,
 CI. Without a cache every repeat bills the same verdicts again; with one, a
 rerun over unchanged inputs costs nothing and finishes in seconds. The cache
 key covers everything that changes a verdict (model, messages, decoding
