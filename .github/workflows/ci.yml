@@ -21,10 +21,12 @@ jobs:
         run: ruff check .
       - name: english-only policy
         run: python tools/check_lang.py
-      - name: dataset matches its generator
+      - name: datasets and runs match their generators
         run: |
           python tools/make_toy_dataset.py
-          git diff --exit-code datasets/
+          python tools/make_annotation_items.py
+          python tools/make_runs.py
+          git diff --exit-code datasets/ runs/
       - name: tests
         run: pytest -q
       - name: regression gate on the toy dataset

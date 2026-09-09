@@ -1,0 +1,342 @@
+{
+ "date": "2026-09-09T11:52:58.065323+00:00",
+ "judge_model": "openai/gpt-oss-120b",
+ "records": [
+  {
+   "question": "What causes the seasons on Earth?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What causes the seasons on Earth?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "How should a beginner start learning to cook?",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "How should a beginner start learning to cook?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "Why is the sky blue?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "Why is the sky blue?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What's a good way to stay focused while working from home?",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What's a good way to stay focused while working from home?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "Explain what a hash function is.",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "Explain what a hash function is.",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What are the benefits of regular exercise?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What are the benefits of regular exercise?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "How does a vaccine work?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "How does a vaccine work?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What makes a good cup of coffee?",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What makes a good cup of coffee?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "Why do leaves change color in autumn?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "Why do leaves change color in autumn?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "How can someone improve their writing?",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "How can someone improve their writing?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What is compound interest?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What is compound interest?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "How do noise-cancelling headphones work?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "How do noise-cancelling headphones work?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What's the best way to remember someone's name?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What's the best way to remember someone's name?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "Why do we dream?",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "Why do we dream?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "How should you respond to a job rejection?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "How should you respond to a job rejection?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What is the greenhouse effect?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What is the greenhouse effect?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "How do you make a decision when you're stuck?",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "How do you make a decision when you're stuck?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What causes jet lag?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What causes jet lag?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "How does a search engine rank pages?",
+   "raw": "4",
+   "score": 4,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "How does a search engine rank pages?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  },
+  {
+   "question": "What's a healthy way to handle stress?",
+   "raw": "5",
+   "score": 5,
+   "skip": null,
+   "condition": "normal",
+   "max_tokens": 600
+  },
+  {
+   "question": "What's a healthy way to handle stress?",
+   "raw": "",
+   "score": null,
+   "skip": "judge_parse",
+   "condition": "starved",
+   "max_tokens": 4
+  }
+ ],
+ "analysis": {
+  "normal": {
+   "attempted": 20,
+   "parsed": 20,
+   "skipped": 0,
+   "skip_rate": 0.0,
+   "mean_score": 4.6
+  },
+  "starved": {
+   "attempted": 20,
+   "parsed": 0,
+   "skipped": 20,
+   "skip_rate": 1.0,
+   "mean_score": null
+  }
+ }
+}

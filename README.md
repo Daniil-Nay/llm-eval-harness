@@ -49,17 +49,32 @@ evalkit/
   stats.py               Wilson interval, bootstrap CI, paired bootstrap diff
   datasets.py            golden-set loading + hygiene: exact/near duplicates,
                          corpus leakage, type skew
+  runner.py              run a SUT over a golden set: per-example scores,
+                         pinned manifest, diff of two runs
   judge/client.py        OpenAI-compatible chat client (env-configured)
-  judge/protocols.py     pairwise-with-swap, pointwise; parse-failure = counted skip
+  judge/cache.py         disk cache for judge calls - a rerun costs nothing
+  judge/protocols.py     pairwise-with-swap, pointwise, rubric-based;
+                         parse-failure = counted skip, raw reply persisted
   judge/bias.py          flip rate + slot preference over persisted records
   sut.py                 SystemUnderTest protocol + keyword baseline
   gate.py                CI regression gate, exit code as the interface
 datasets/                toy corpus (13 docs) + golden set (40 queries)
-experiments/position_bias/  the experiment above, with raw results
+datasets/annotations/    40 answers graded 0-3 by the author against a
+                         written rubric - a fixed second annotator
+runs/                    baseline vs degraded-variant retrieval runs, diffable
+experiments/position_bias/   the experiment above, with raw results
+experiments/parse_failures/  the same judge with a starved token budget:
+                             skip rate 0/20 at max_tokens=600, 20/20 at 4
 ```
 
 The toy corpus documents a fictional caching library, so retrieval quality here
 measures the harness, never the model's memorized knowledge.
+
+## Working offline
+
+Everything deterministic runs without an API key: the test suite, the gate,
+`--replay` on both experiments, and the shipped `runs/` diff. A key is needed
+only to produce your own numbers instead of replaying the committed ones.
 
 ## Quickstart
 
